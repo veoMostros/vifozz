@@ -1,0 +1,279 @@
+@charset "utf-8";
+
+#portaCarrusel {
+	position: relative;
+}
+#portaCarrusel::after {
+	content: '';
+	width: 100%;
+	height:270px;
+	background: linear-gradient(0deg,rgba(1,0,2,0) 0%, rgba(1,0,2,0) 18%, rgba(1,0,2,0.9) 50%, rgba(1,0,2,0) 81%, rgba(1,0,2,0) 100%);
+	position: absolute;
+	pointer-events: none;
+	left: 0;
+	bottom:-135px;
+	z-index: 6;
+}
+
+#portaCarrusel .info {
+	position: absolute;
+	left: 50%;
+	bottom:30px;
+	transform: translateX(-50%);
+	z-index: 12;
+}
+#portaCarrusel .info h1 {
+	font-size: 2.1em;
+	margin: 0 0 129px;
+	padding:0 33.3% 0 0;
+}
+
+.owl-carousel {
+	width: 100%;
+	max-width: 100vw;
+	display:block;
+	cursor: grab;
+	margin: 0 auto;
+	overflow: hidden;
+	transition: all 0.3s ease-in-out;
+	animation-duration: 1.8s;
+	animation-delay: 0.9s;
+	position: relative;
+	z-index: 3;
+}
+.owl-carousel:active {
+	cursor: grabbing;
+}
+.owl-carousel div {
+	float:left;
+}
+.owl-carousel .item {
+	width: 100%;
+	position: relative !important;
+	overflow: hidden;
+	z-index: 1;
+}
+.owl-carousel .item > div {
+	position: relative;
+}
+.owl-carousel .item .imagen {
+	width: 100%;
+	height:0;
+	padding: 0 0 63%;
+	position: relative;
+	overflow: hidden;
+}
+.owl-carousel .item .imagen::after {
+	content: '';
+	width: 100%;
+	height:100%;
+	background: linear-gradient(90deg,rgba(1,0,2,0.7) 0%, rgba(1,0,2,0) 90%, rgba(1,0,2,0) 100%);
+	position: absolute;
+	pointer-events: none;
+	top: 0;
+	left:0;
+	z-index: 1;
+}
+.owl-carousel .item .imagen > div {
+	width: 100%;
+	height:100%;
+	position: absolute;
+	top: 50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+}
+.owl-carousel .item .imagen img {
+	width: 102%;
+	height:102%;
+	object-fit: cover;
+}
+.owl-carousel .item .texto {
+	position: absolute;
+	left: 50%;
+	bottom:180px;
+	transform: translateX(-50%);
+	color: var(--moradoClaro);
+	z-index: 6;
+}
+.owl-carousel .item .texto h3 {
+	margin: 0 0 9px;
+}
+
+.owl-carousel .item .lado:nth-child(2) .portaImg {
+	margin: 0 0 0 30px;
+}
+.owl-carousel .item .portaImg img {
+	width: 102%;
+	height:102%;
+	object-fit: cover;
+	position: absolute;
+	top: 50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+	opacity: 1;
+}
+
+.owl-carousel .owl-item.active .imagen img {
+	animation: zoomIn ease-in-out 1.5s 0.6s both;
+}
+.owl-carousel .owl-item.active h3,
+.owl-carousel .owl-item.active p {
+	animation: fadeIn ease-in-out 1.8s 2.1s both;
+}
+
+.owl-dots {
+	width: 100%;
+	height:0;
+	text-align: center;
+	position: relative;
+	/*display: flex;*/
+	justify-content: center;
+	padding:0 0 60px;
+	z-index: 9;
+	
+	display: none;
+}
+.owl-dots .owl-dot {
+	width: 15px;
+	height:15px;
+	background: transparent;
+	position: relative;
+	margin: 0 6px;
+	cursor: pointer;
+	border: solid 2px var(--naranjaNex);
+	border-radius: 50% !important;
+}
+.owl-dots .owl-dot.active, 
+.owl-dots .owl-dot:hover {
+	background: var(--naranjaNex);
+}
+
+@media screen and (max-width:666px) {
+
+#portaCarrusel .info {
+	position: absolute;
+	left: 50%;
+	bottom:30px;
+	transform: translateX(-50%);
+	z-index: 12;
+}
+	#portaCarrusel .info h1 {
+		font-size: 1.5em;
+		margin: 0 0 171px;
+		padding:0 18px 0 0;
+	}
+
+.owl-carousel {
+	width: 100%;
+	max-width: 100vw;
+	display:block;
+	cursor: grab;
+	margin: 0 auto;
+	overflow: hidden;
+	transition: all 0.3s ease-in-out;
+	animation-duration: 1.8s;
+	animation-delay: 0.9s;
+	position: relative;
+	z-index: 3;
+}
+.owl-carousel:active {
+	cursor: grabbing;
+}
+.owl-carousel div {
+	float:left;
+}
+.owl-carousel .item {
+	width: 100%;
+	position: relative !important;
+	overflow: hidden;
+	z-index: 1;
+}
+	.owl-carousel .item .imagen {
+		height:100vh;
+	}
+.owl-carousel .item .imagen::after {
+	content: '';
+	width: 100%;
+	height:100%;
+	background: linear-gradient(90deg,rgba(1,0,2,0.7) 0%, rgba(1,0,2,0) 90%, rgba(1,0,2,0) 100%);
+	position: absolute;
+	pointer-events: none;
+	top: 0;
+	left:0;
+	z-index: 1;
+}
+.owl-carousel .item .imagen > div {
+	width: 100%;
+	height:100%;
+	position: absolute;
+	top: 50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+}
+.owl-carousel .item .imagen img {
+	width: 102%;
+	height:102%;
+	object-fit: cover;
+}
+.owl-carousel .item .texto {
+	position: absolute;
+	left: 50%;
+	bottom:180px;
+	transform: translateX(-50%);
+	color: var(--moradoClaro);
+	z-index: 6;
+}
+.owl-carousel .item .texto h3 {
+	margin: 0 0 9px;
+}
+
+.owl-carousel .item .lado:nth-child(2) .portaImg {
+	margin: 0 0 0 30px;
+}
+.owl-carousel .item .portaImg img {
+	width: 102%;
+	height:102%;
+	object-fit: cover;
+	position: absolute;
+	top: 50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+	opacity: 1;
+}
+
+.owl-carousel .owl-item.active .imagen img {
+	animation: zoomIn ease-in-out 1.5s 0.6s both;
+}
+.owl-carousel .owl-item.active h3,
+.owl-carousel .owl-item.active p {
+	animation: fadeIn ease-in-out 1.8s 2.1s both;
+}
+
+.owl-dots {
+	width: 100%;
+	height:0;
+	text-align: center;
+	position: relative;
+	/*display: flex;*/
+	justify-content: center;
+	padding:0 0 60px;
+	z-index: 9;
+	
+	display: none;
+}
+.owl-dots .owl-dot {
+	width: 15px;
+	height:15px;
+	background: transparent;
+	position: relative;
+	margin: 0 6px;
+	cursor: pointer;
+	border: solid 2px var(--naranjaNex);
+	border-radius: 50% !important;
+}
+.owl-dots .owl-dot.active, 
+.owl-dots .owl-dot:hover {
+	background: var(--naranjaNex);
+}
+	
+}
